@@ -24,11 +24,13 @@ steps:
     provider: 'azurerm'
     command: 'init'
     workingDirectory: '$(System.DefaultWorkingDirectory)/skip-step'
-    backendServiceArm: '$(subscription)'
+    backendServiceArm: 'MSDN Platforms Subscription (b85a975e-c6ff-4c4f-839d-264aa12fd656)'
     backendAzureRmResourceGroupName: '$(resourceGroup)'
     backendAzureRmStorageAccountName: '$(storageAccount)'
     backendAzureRmContainerName: '$(container)'
     backendAzureRmKey: '$(tfstateFile)'
+
+
 
 - task: TerraformTaskV1@0
   displayName: terraform plan -out=tfplan
